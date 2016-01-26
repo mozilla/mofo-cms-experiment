@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 
-export default React.createClass({
+export default class Index extends React.Component {
   render() {
+    // console.log(`this.props`, this.props);
     return (
       <html>
         <head lang="en">
@@ -12,13 +13,15 @@ export default React.createClass({
           <link href="../public/style.css" type="text/css" rel="stylesheet" />
         </head>
         <body>
-          <div id="app" className="container">
+          <div id="app">
             <Navbar />
-            {this.props.children}
+            <div id="main-container" className="container">
+              {this.props.children}
+            </div>
           </div>
-          <script src="../bundle.js"></script>
+          <script src="bundle.js"></script>
         </body>
       </html>
     );
   }
-});
+}
