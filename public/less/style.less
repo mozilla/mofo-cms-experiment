@@ -1,0 +1,47 @@
+@import 'variables';
+
+html, body {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  background: #333;
+  color: #ccc;
+}
+
+#app {
+  max-width: 80rem;
+  margin: 20px auto;
+}
+
+#navbar {
+  a {
+    display: inline-block;
+    margin-right: 1.5rem;
+    padding: 1rem 2rem;
+    background: darken(@navItemBg, 35%);
+    color: @white;
+    text-decoration: none;
+    &:hover {
+      background: darken(@navItemBg, 15%);
+    }
+    &.active {
+      background: @navItemBg;
+    }
+  }
+}
+
+
+.wp-page-content {
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border: .3rem solid pink;
+}
+
+#emoji {
+  font-size: 2rem;
+  text-align: right;
+}
