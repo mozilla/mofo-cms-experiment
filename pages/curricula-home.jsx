@@ -47,8 +47,7 @@ export default class CurriculumIndex extends React.Component {
         }
         <div className="kits-gallery">
           { this.state.curriculumKitsLoaded ?
-            curriculumKits.map(function(kit) {
-              console.log(`hi kit`);
+            curriculumKits.map((kit) => {
               return <CurriculumKitThumb {...kit} key={kit.id} />;
             })
             : <p>Loading curriculum kits...</p>

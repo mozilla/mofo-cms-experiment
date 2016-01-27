@@ -24,6 +24,7 @@
     "gulp-less": "^3.0.5",
     "gulp-sourcemaps": "^1.6.0",
     "history": "^1.17.0",
+    "moment": "^2.11.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-router": "^1.0.3",
@@ -56,7 +57,7 @@
       "jsx": true
     },
     "rules": {
-       "no-console": 1
+      "no-console": 1
     },
     "plugins": [
       "react"

@@ -2,6 +2,7 @@ import React from 'react';
 import request from 'superagent';
 import config from '../config';
 import path from 'path';
+import moment from 'moment';
 
 export default class BlogPostThumb extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ export default class BlogPostThumb extends React.Component {
   }
   render() {
     var pathToBlogPost = `blog/` + path.relative(config.urlToWordPress, this.props.link);
+    var publishedTime = moment(this.props.date).format(`MMMM DD, YYYY HH:mm`);
 
     return (
       <div className="blog-post-thumb">
@@ -32,7 +34,7 @@ export default class BlogPostThumb extends React.Component {
         { this.state.wpAuthorLoaded ?
             <div className="meta">
               <i className="fa fa-user"></i><span>{this.author.name}</span>
-              <i className="fa fa-calendar"></i> <span>{this.props.date}</span>
+              <i className="fa fa-calendar"></i> <span>{publishedTime}</span>
             </div>
           : null }
       </div>
