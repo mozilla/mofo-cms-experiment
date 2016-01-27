@@ -4,12 +4,14 @@ import Index from './pages/index';
 import Home from './pages/home';
 import About from './pages/about';
 import Curricula from './pages/curricula-home';
+import BlogHome from './pages/blog-home';
 
 export default (
   <Route path="/" component={Index}>
     <IndexRoute component={Home}/>
     <Route path="about" component={About} />
     <Route path="curricula" component={Curricula} />
+    <Route path="blog" component={BlogHome} />
   </Route>
 );
 

@@ -10,7 +10,7 @@ body {
   font-weight: 300;
   background: @white;
   margin: 0;
-  color: #555;
+  color: @bodyTextGrey;
   * {
     box-sizing: padding-box;
   }
@@ -60,6 +60,26 @@ body {
   margin-bottom: 2rem;
   &:nth-child(2n+1) {
     margin-right: 2rem;
+  }
+}
+
+.blog-post-thumb {
+  padding: 2rem 0;
+  &:not(:last-child) {
+    border-bottom: .3rem solid @yellow;
+  }
+  h3 {
+    margin-bottom: .5rem;
+  }
+  .meta {
+    font-size: 1.4rem;
+    color: lighten(@bodyTextGrey, 25%)
+  }
+  .fa {
+    margin-right: .5rem;
+    &:not(:first-child) {
+      margin-left: 1.5rem;
+    }
   }
 }
 

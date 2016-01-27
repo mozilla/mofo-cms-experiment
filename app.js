@@ -12,7 +12,7 @@ app.set('view engine', 'html');
 app.use(express.static(__dirname));
 
 app.get('/*', function (req, res) {
-  console.log("\n\n==== server hit ==== \n\n", req.path);
+  console.log("\n==== server hit ==== \n", req.path);
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {
       console.log("error :(");
@@ -21,7 +21,7 @@ app.get('/*', function (req, res) {
       console.log("redirectLocation = ", redirectLocation);
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
-      res.status(200).send('<!DOCTYPE html>' + ReactDOMServer.renderToString(<RoutingContext {...renderProps} />))
+      res.status(200).send('<!DOCTYPE html>' + ReactDOMServer.renderToStaticMarkup(<RoutingContext {...renderProps} />))
     } else {
       res.status(404).send('Not found')
     }

@@ -1,38 +1,35 @@
 import React from 'react';
 import request from 'superagent';
 import CurriculumKitThumb from '../components/CurriculumKitThumb';
+import config from '../config';
 
 export default class CurriculumIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.wpPageID = 12;
+    this.wpPageID = config.pageID.curricula;
     this.state = {
       wpPageLoaded: false,
       curriculumKitsLoaded: false
     };
   }
   componentDidMount() {
-    var self = this;
-
     request
       .get(`http://localhost:8888/wp-json/wp/v2/pages?parent=`+this.wpPageID)
       .accept(`json`)
       .end((err, res) => {
         if (err) { console.log(`error: `, err); }
-        self.curriculumKits = JSON.parse(res.text).sort((a,b) => {
+        this.curriculumKits = JSON.parse(res.text).sort((a,b) => {
           return a.menu_order > b.menu_order;
         });
-        console.log(self.curriculumKits);
-        self.setState({curriculumKitsLoaded: true});
+        this.setState({curriculumKitsLoaded: true});
       });
     request
       .get(`http://localhost:8888/wp-json/wp/v2/pages/` + this.wpPageID)
       .accept(`json`)
       .end((err, res) => {
         if (err) { console.log(`error: `, err); }
-        self.wpPage = JSON.parse(res.text);
-        console.log(`/////// `, self.wpPage);
-        self.setState({wpPageLoaded: true});
+        this.wpPage = JSON.parse(res.text);
+        this.setState({wpPageLoaded: true});
       });
   }
   render() {
@@ -52,7 +49,7 @@ export default class CurriculumIndex extends React.Component {
           { this.state.curriculumKitsLoaded ?
             curriculumKits.map(function(kit) {
               console.log(`hi kit`);
-              return <CurriculumKitThumb {...kit} />;
+              return <CurriculumKitThumb {...kit} key={kit.id} />;
             })
             : <p>Loading curriculum kits...</p>
           }
