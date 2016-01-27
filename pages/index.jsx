@@ -3,6 +3,10 @@ import Navbar from '../components/Navbar';
 
 export default class Index extends React.Component {
   render() {
+    // [FIXME] We probably don't need to specify 'relativePathToStaticFiles'
+    // once we fix the build system by getting rid of gulp :(
+    let relativePathToStaticFiles = this.props.children.props.route.relativePathToStaticFiles || ``;
+
     return (
       <html>
         <head lang="en">
@@ -10,7 +14,7 @@ export default class Index extends React.Component {
           <title>Mofo CMS Experiment</title>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
           <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
-          <link href="../public/style.css" type="text/css" rel="stylesheet" />
+          <link href={relativePathToStaticFiles+`../public/style.css`} type="text/css" rel="stylesheet" />
         </head>
         <body>
           <div id="app">
@@ -19,7 +23,7 @@ export default class Index extends React.Component {
               {this.props.children}
             </div>
           </div>
-          <script src="bundle.js"></script>
+          <script src={relativePathToStaticFiles+`bundle.js`}></script>
         </body>
       </html>
     );

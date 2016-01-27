@@ -5,6 +5,7 @@ import Home from './pages/home';
 import About from './pages/about';
 import Curricula from './pages/curricula-home';
 import BlogHome from './pages/blog-home';
+import BlogPost from './components/BlogPostTemplate';
 
 export default (
   <Route path="/" component={Index}>
@@ -12,6 +13,6 @@ export default (
     <Route path="about" component={About} />
     <Route path="curricula" component={Curricula} />
     <Route path="blog" component={BlogHome} />
+    <Route path="blog/:year/:month/:day/:slug" component={BlogPost} relativePathToStaticFiles="../../../../../" />
   </Route>
 );
-

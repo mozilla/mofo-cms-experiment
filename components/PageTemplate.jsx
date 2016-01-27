@@ -16,7 +16,7 @@ export default class PageTemplate extends React.Component {
         if (err) { console.log(`error: `, err); }
         this.wpPage = JSON.parse(res.text);
         this.setState({wpLoaded: true});
-      }).bind(this);
+      });
   }
   render() {
     var page = this.wpPage;
