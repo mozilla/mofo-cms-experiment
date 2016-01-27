@@ -14,7 +14,7 @@ export default class CurriculumIndex extends React.Component {
   }
   componentDidMount() {
     request
-      .get(`http://localhost:8888/wp-json/wp/v2/pages?parent=`+this.wpPageID)
+      .get(`${config.wpApiEndpoint}pages?parent=${this.wpPageID}`)
       .accept(`json`)
       .end((err, res) => {
         if (err) { console.log(`error: `, err); }
@@ -24,7 +24,7 @@ export default class CurriculumIndex extends React.Component {
         this.setState({curriculumKitsLoaded: true});
       });
     request
-      .get(`http://localhost:8888/wp-json/wp/v2/pages/` + this.wpPageID)
+      .get(`${config.wpApiEndpoint}pages/${this.wpPageID}`)
       .accept(`json`)
       .end((err, res) => {
         if (err) { console.log(`error: `, err); }

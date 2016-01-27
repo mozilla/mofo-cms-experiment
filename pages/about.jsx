@@ -5,7 +5,7 @@ import config from '../config';
 export default class About extends React.Component {
   render() {
     return (
-      <PageTemplate apiEndpoint={`http://localhost:8888/wp-json/wp/v2/pages/`+config.pageID.about} />
+      <PageTemplate apiEndpoint={`${config.wpApiEndpoint}pages/${config.pageID.about}`} />
     );
   }
 }
