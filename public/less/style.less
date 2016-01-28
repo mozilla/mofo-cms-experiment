@@ -17,13 +17,11 @@ body {
 }
 
 a {
-  color: @green;
+  color: darken(@green, 20%);
   font-weight: 500;
-  &:hover {
-    color: darken(@green, 20%);
-  }
-  &.active {
-    color: darken(@green, 20%);
+  &:hover,
+  &:active {
+    color: @green;
   }
 }
 

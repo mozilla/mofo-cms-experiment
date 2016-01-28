@@ -53,7 +53,7 @@ export default class BlogHome extends React.Component {
         }
         <div className="blog-gallery">
           { this.state.wpBlogPostsLoaded ?
-            blogPosts.map(function(post) {
+            blogPosts.map((post) => {
               return <BlogPostThumb {...post} key={post.id} />;
             })
             : <p>Loading blog posts...</p>
