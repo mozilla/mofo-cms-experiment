@@ -1,3 +1,6 @@
+.env
+secret.js
+
 # dist folder
 dist
 

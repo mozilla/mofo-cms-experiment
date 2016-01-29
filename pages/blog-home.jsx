@@ -1,12 +1,12 @@
 import React from 'react';
 import request from 'superagent';
 import BlogPostThumb from '../components/BlogPostThumb';
-import config from '../config';
+import configWPCom from '../config-wp-com';
 
 export default class BlogHome extends React.Component {
   constructor(props) {
     super(props);
-    this.wpPageID = config.pageID.blog;
+    this.wpPageID = configWPCom.pageID.blog;
     this.state = {
       wpPageLoaded: false,
       wpBlogPostsLoaded: false
@@ -18,7 +18,7 @@ export default class BlogHome extends React.Component {
   }
   loadPage() {
     request
-      .get(config.wpApiEndpoint+`pages/`+this.wpPageID)
+      .get(configWPCom.wpApiEndpoint+`posts/`+this.wpPageID)
       .accept(`json`)
       .end((err, res) => {
         if (err) { console.log(`error: `, err); }
@@ -28,11 +28,11 @@ export default class BlogHome extends React.Component {
   }
   loadPostsTitle () {
     request
-      .get(config.wpApiEndpoint+`posts/`)
+      .get(configWPCom.wpApiEndpoint+`posts/`)
       .accept(`json`)
       .end((err, res) => {
         if (err) { console.log(`error: `, err); }
-        this.blogPosts = JSON.parse(res.text).sort((a,b) => {
+        this.blogPosts = JSON.parse(res.text).posts.sort((a,b) => {
           return a.menu_order > b.menu_order;
         });
         this.setState({wpBlogPostsLoaded: true});
@@ -46,15 +46,15 @@ export default class BlogHome extends React.Component {
       <div>
         { this.state.wpPageLoaded ?
           <div>
-            <h1 dangerouslySetInnerHTML={{__html: page.title.rendered}} />
-            <div dangerouslySetInnerHTML={{__html: page.content.rendered}} />
+            <h1 dangerouslySetInnerHTML={{__html: page.title}} />
+            <div dangerouslySetInnerHTML={{__html: page.content}} />
           </div>
           : <p>Loading WP posts</p>
         }
         <div className="blog-gallery">
           { this.state.wpBlogPostsLoaded ?
             blogPosts.map((post) => {
-              return <BlogPostThumb {...post} key={post.id} />;
+              return <BlogPostThumb {...post} key={post.ID} />;
             })
             : <p>Loading blog posts...</p>
           }

@@ -15,6 +15,7 @@ export default class PageTemplate extends React.Component {
       .end((err, res) => {
         if (err) { console.log(`error: `, err); }
         this.wpPage = JSON.parse(res.text);
+        console.log(this.wpPage);
         this.setState({wpLoaded: true});
       });
   }
@@ -25,8 +26,8 @@ export default class PageTemplate extends React.Component {
       <div>
         { this.state.wpLoaded ?
           <div>
-            <h1 dangerouslySetInnerHTML={{__html: page.title.rendered}} />
-            <div dangerouslySetInnerHTML={{__html: page.content.rendered}} />
+            <h1 dangerouslySetInnerHTML={{__html: page.title}} />
+            <div dangerouslySetInnerHTML={{__html: page.content}} />
           </div>
           : <p>Loading WP posts</p>
         }

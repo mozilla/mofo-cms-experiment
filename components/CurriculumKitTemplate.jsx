@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import config from '../config';
+import configWPCom from '../config-wp-com';
 
 export default class CurriculumKitTemplate extends React.Component {
   constructor(props) {
@@ -14,16 +14,17 @@ export default class CurriculumKitTemplate extends React.Component {
     this.getCurrKit();
   }
   getCurrKit() {
-    // [FIXME] Not sure if this is the best endpoint to use since it returns an array instead 1 single post object
-    let apiEndpoit = config.wpApiEndpoint+`pages/?filter[name]=`+this.props.params.slug;
+    let apiEndpoint = `${configWPCom.wpApiEndpoint}posts?type=page&parent_id=${configWPCom.pageID.curricula}`
 
     request
-      .get(apiEndpoit)
+      .get(apiEndpoint)
       .accept(`json`)
       .end((err, res) => {
         if (err) { console.log(`error: `, err); }
-        this.currKit = JSON.parse(res.text)[0];
-        console.log(this.blogPost);
+        this.currKit = JSON.parse(res.text).posts.filter((post) => {
+          return post.slug === this.props.params.slug;
+        })[0];
+        console.log(this.currKit);
         this.setState({wpPageLoaded: true});
       });
   }
@@ -35,8 +36,8 @@ export default class CurriculumKitTemplate extends React.Component {
         <div className="page-type-label">I'm a curriculum kit (a WP subpage of Curricula)</div>
         { this.state.wpPageLoaded ?
           <div>
-            <h1 dangerouslySetInnerHTML={{__html: page.title.rendered}} />
-            <div dangerouslySetInnerHTML={{__html: page.content.rendered}} />
+            <h1 dangerouslySetInnerHTML={{__html: page.title}} />
+            <div dangerouslySetInnerHTML={{__html: page.content}} />
           </div>
           : <p>Loading page...</p>
         }

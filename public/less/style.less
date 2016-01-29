@@ -28,8 +28,9 @@ a {
 .container {
   max-width: 80rem;
   margin: 0 auto 2rem auto;
+  padding: 0 3rem;
   * {
-    max-width: 80rem;
+    max-width: 70rem;
     height: auto;
   }
 }
@@ -100,19 +101,19 @@ a {
   h3 {
     margin-bottom: .5rem;
   }
-  .fa {
-    margin-right: .5rem;
-    &:not(:first-child) {
-      margin-left: 1.5rem;
-    }
-  }
 }
 
 .blog-post,
 .blog-post-thumb {
   .meta {
     font-size: 1.4rem;
-    color: lighten(@bodyTextGrey, 25%)
+    color: lighten(@bodyTextGrey, 25%);
+    .fa {
+      margin-right: .5rem;
+      &:not(:first-child) {
+        margin-left: 1.5rem;
+      }
+    }
   }
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import PageTemplate from '../components/PageTemplate';
-import config from '../config';
+import configWPCom from '../config-wp-com';
 
 export default class About extends React.Component {
   render() {
     return (
-      <PageTemplate apiEndpoint={`${config.wpApiEndpoint}pages/${config.pageID.about}`} />
+      <PageTemplate apiEndpoint={`${configWPCom.wpApiEndpoint}posts/${configWPCom.pageID.about}`} />
     );
   }
 }

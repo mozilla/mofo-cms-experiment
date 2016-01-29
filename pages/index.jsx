@@ -15,6 +15,7 @@ export default class Index extends React.Component {
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
           <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
           <link href={relativePathToStaticFiles+`../public/style.css`} type="text/css" rel="stylesheet" />
+          <script src="https://code.jquery.com/jquery-2.2.0.js" />
         </head>
         <body>
           <div id="app">
