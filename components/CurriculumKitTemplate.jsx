@@ -14,7 +14,7 @@ export default class CurriculumKitTemplate extends React.Component {
     this.getCurrKit();
   }
   getCurrKit() {
-    let apiEndpoint = `${configWPCom.wpApiEndpoint}posts?type=page&parent_id=${configWPCom.pageID.curricula}`
+    let apiEndpoint = `${configWPCom.wpApiEndpoint}posts?type=page&parent_id=${configWPCom.pageID.curricula}`;
 
     request
       .get(apiEndpoint)

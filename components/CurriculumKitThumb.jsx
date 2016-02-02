@@ -10,7 +10,7 @@ export default class CurriculumKitThumb extends React.Component {
       <a className="curr-kit-thumb" href={pathToBlogPost}>
         <h3>{this.props.title}</h3>
         <div>{this.props.devBy}</div>
-        <div dangerouslySetInnerHTML={{__html: this.props.content}} />
+        <div dangerouslySetInnerHTML={{__html: this.props.excerpt}} />
       </a>
     );
   }

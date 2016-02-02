@@ -16,7 +16,6 @@ export default class BlogPostTemplate extends React.Component {
   getBlogPost() {
     let params = this.props.params;
     let apiEndpoit = configWPCom.wpApiEndpoint+`posts/slug:`+params.slug;
-    console.log(apiEndpoit);
 
     request
       .get(apiEndpoit)
