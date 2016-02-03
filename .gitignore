@@ -1,5 +1,8 @@
 .env
 secret.js
+bundle.js
+*.css
+app.bundle.js
 
 # dist folder
 dist

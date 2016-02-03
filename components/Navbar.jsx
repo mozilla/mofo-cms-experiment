@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarLink from './NavbarLink';
+import NavbarLink from './NavbarLink.jsx';
 
 export default class Navbar extends React.Component {
   render() {

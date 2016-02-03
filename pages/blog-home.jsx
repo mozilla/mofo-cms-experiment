@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import BlogPostThumb from '../components/BlogPostThumb';
+import BlogPostThumb from '../components/BlogPostThumb.jsx';
 import configWPCom from '../config-wp-com';
 
 export default class BlogHome extends React.Component {

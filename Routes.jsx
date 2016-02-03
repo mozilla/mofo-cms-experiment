@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import Index from './pages/index';
-import Home from './pages/home';
-import About from './pages/about';
-import Curricula from './pages/curricula-home';
-import CurriculumKit from './components/CurriculumKitTemplate';
-import BlogHome from './pages/blog-home';
-import BlogPost from './components/BlogPostTemplate';
+import Index from './pages/index.jsx';
+import Home from './pages/home.jsx';
+import About from './pages/about.jsx';
+import Curricula from './pages/curricula-home.jsx';
+import CurriculumKit from './components/CurriculumKitTemplate.jsx';
+import BlogHome from './pages/blog-home.jsx';
+import BlogPost from './components/BlogPostTemplate.jsx';
 
 export default (
   <Route path="/" component={Index}>

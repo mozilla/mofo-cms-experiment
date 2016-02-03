@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import CurriculumKitThumb from '../components/CurriculumKitThumb';
+import CurriculumKitThumb from '../components/CurriculumKitThumb.jsx';
 import configWPCom from '../config-wp-com';
 
 export default class CurriculumIndex extends React.Component {

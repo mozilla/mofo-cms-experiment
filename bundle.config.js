@@ -1,9 +1,9 @@
 var path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'dist/main.js'),
+  entry: path.resolve(__dirname, 'main.jsx'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname),
     filename: 'bundle.js'
   },
   module: {
@@ -12,6 +12,10 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loaders: [ 'babel-loader' ]
+      },
+      {
+        test: /\.less$/,
+        loader: "style!css!less"
       }
     ]
   },
