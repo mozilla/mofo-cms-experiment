@@ -23,6 +23,9 @@ function serveStaticFiles(pathRequested, res) {
 }
 
 function htmlTemplate(appHtmlAsString) {
+  var pathToStyleCss = path.join(__dirname, "public", "style.css");
+  var pathToBundleJs = path.join(__dirname, "bundle.js");
+
   return (`
     <!DOCTYPE html>
     <html>
@@ -31,13 +34,13 @@ function htmlTemplate(appHtmlAsString) {
         <title>Mofo CMS Experiment</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
-        <link href="../public/style.css" type="text/css" rel="stylesheet" />
+        <link href=${pathToStyleCss} type="text/css" rel="stylesheet" />
       </head>
       <body>
         <div id="app">
           ${appHtmlAsString}
         </div>
-        <script src="../bundle.js"></script>
+        <script src=${pathToBundleJs}></script>
       </body>
     </html>
   `);

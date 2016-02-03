@@ -4,9 +4,6 @@ bundle.js
 *.css
 app.bundle.js
 
-# dist folder
-dist
-
 # Logs
 logs
 *.log

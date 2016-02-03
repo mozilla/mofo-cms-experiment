@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "prestart": "rm -rf dist",
     "build-webpack": "webpack --config bundle.config.js && webpack --config app.config.js",
     "start": "npm run less && npm run eslint && npm run build-webpack && node app.bundle.js",
     "eslint": "eslint --fix **/*.jsx **/*.js",
