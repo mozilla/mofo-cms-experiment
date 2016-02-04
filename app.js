@@ -5,7 +5,7 @@ import ReactDOMServer from 'react-dom/server';
 import { match, RoutingContext } from 'react-router';
 import routes from './Routes.jsx';
 
-var PORT = '9090';
+var PORT = process.env.PORT || '9090';
 
 var app = express();
 
