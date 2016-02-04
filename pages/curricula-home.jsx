@@ -34,7 +34,7 @@ export default class CurriculumIndex extends React.Component {
   render() {
     let page = this.wpPage;
     let curriculumKits = this.curriculumKits;
-    let note = `This page is composed of 1) a WordPress Page's title & content 2) a list of its subpages' title & excerpt.`;
+    let note = `This page is composed of 1) a WordPress Page's title & content 2) a list of its subpages' title & excerpt retrieved using WP's REST API.`;
 
     return (
       <div>

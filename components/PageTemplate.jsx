@@ -27,6 +27,7 @@ export default class PageTemplate extends React.Component {
         <div className="note">{this.props.note}</div>
         { this.state.wpLoaded ?
           <div>
+            <img src={page.featured_image} />
             <h1 dangerouslySetInnerHTML={{__html: page.title}} />
             <div dangerouslySetInnerHTML={{__html: page.content}} />
           </div>

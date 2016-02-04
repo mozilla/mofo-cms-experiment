@@ -37,6 +37,7 @@ export default class BlogPostTemplate extends React.Component {
             <div className="meta">
               <i className="fa fa-users"></i><span>{this.blogPost.author.name}</span>
               <i className="fa fa-calendar"></i><span>{moment(this.blogPost.date).format(`MMMM DD, YYYY HH:mm`)}</span>
+              <i className="fa fa-external-link"></i><a href={this.blogPost.URL}>View on WordPress.com</a>
             </div>
             <div dangerouslySetInnerHTML={{__html: this.blogPost.content}} />
           </div>

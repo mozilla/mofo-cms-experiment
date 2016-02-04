@@ -41,7 +41,7 @@ export default class BlogHome extends React.Component {
   render() {
     let page = this.wpPage;
     let blogPosts = this.blogPosts;
-    let note = `This page is composed of 1) a WordPress Page's title & content 2) a list of blog posts.`;
+    let note = `This page is composed of 1) a WordPress Page's title & content 2) a list of blog posts retrieved using WP's REST API.`;
 
     return (
       <div>
