@@ -5,7 +5,7 @@ export default class Index extends React.Component {
   render() {
     return (
       <div>
-        <div id="cms-exp-label"><div>Mofo CMS Experiment</div></div>
+        <div id="cms-exp-label"><a href="https://github.com/mozilla/mofo-cms-experiment">Mofo CMS Experiment</a></div>
         <Navbar />
         <div id="main-container" className="container">
           {this.props.children}

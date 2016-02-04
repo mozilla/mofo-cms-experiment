@@ -25,6 +25,11 @@ a {
   }
 }
 
+h1 {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lighten(@bodyTextGrey, 10%);
+}
+
 .container {
   max-width: 80rem;
   margin: 0 auto 2rem auto;
@@ -48,15 +53,20 @@ a {
   height: 20rem;
   overflow: hidden;
   font-weight: 500;
-  div {
+  a {
+    display: block;
     position: absolute;
     top: 5rem;
     right: -5.2rem;
+    padding: 1rem 4rem;
     background: @hotPink;
     color: @white;
-    padding: 1rem 4rem;
     transform: rotate(45deg);
     white-space: pre;
+    text-decoration: none;
+    &:hover {
+      background: darken(@hotPink, 20%);
+    }
   }
 }
 
@@ -76,6 +86,14 @@ a {
   }
 }
 
+.note {
+  background: darken(@white, 5%);
+  padding: 1rem 1.5rem;
+  color: lighten(@black, 40%);
+  font-size: 1.4rem;
+  border-radius: .5rem;
+}
+
 .page-type-label {
   display: inline-block;
   background: lighten(@hotPink, 10%);
@@ -83,12 +101,14 @@ a {
   font-size: 2rem;
   text-transform: uppercase;
   padding: 1.2rem 2rem;
+  margin-top: 1rem;
   border-radius: .4rem;
 }
 
 .kits-gallery {
   display: flex;
   flex-flow: row wrap;
+  margin-top: 5rem;
 }
 
 .curr-kit-thumb {

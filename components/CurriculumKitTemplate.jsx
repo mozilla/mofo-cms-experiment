@@ -29,11 +29,12 @@ export default class CurriculumKitTemplate extends React.Component {
       });
   }
   render() {
-    var page = this.currKit;
+    let page = this.currKit;
+    let note = `This page a subpage of "Curricula". It is composed of a WordPress Page's title & content.`;
 
     return (
       <div>
-        <div className="page-type-label">I'm a curriculum kit (a WP subpage of Curricula)</div>
+        <div className="note">{note}</div>
         { this.state.wpPageLoaded ?
           <div>
             <h1 dangerouslySetInnerHTML={{__html: page.title}} />

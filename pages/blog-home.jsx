@@ -39,11 +39,13 @@ export default class BlogHome extends React.Component {
       });
   }
   render() {
-    var page = this.wpPage;
-    var blogPosts = this.blogPosts;
+    let page = this.wpPage;
+    let blogPosts = this.blogPosts;
+    let note = `This page is composed of 1) a WordPress Page's title & content 2) a list of blog posts.`;
 
     return (
       <div>
+        <div className="note">{note}</div>
         { this.state.wpPageLoaded ?
           <div>
             <h1 dangerouslySetInnerHTML={{__html: page.title}} />
