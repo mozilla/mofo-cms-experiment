@@ -12,7 +12,7 @@ body {
   margin: 0;
   color: @bodyTextGrey;
   * {
-    box-sizing: padding-box;
+    box-sizing: border-box;
   }
 }
 
@@ -29,22 +29,42 @@ a {
   max-width: 80rem;
   margin: 0 auto 2rem auto;
   padding: 0 3rem;
-  * {
-    max-width: 70rem;
-    height: auto;
-  }
+}
+
+#app {
+  overflow: hidden;
 }
 
 #main-container {
   margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+#cms-exp-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20rem;
+  height: 20rem;
+  overflow: hidden;
+  font-weight: 500;
+  div {
+    position: absolute;
+    top: 5rem;
+    right: -5.2rem;
+    background: @hotPink;
+    color: @white;
+    padding: 1rem 4rem;
+    transform: rotate(45deg);
+    white-space: pre;
+  }
 }
 
 #navbar {
-  background: darken(@navItemBg, 35%);
-  text-align: right;
+  background: @black;
   a {
     display: inline-block;
-    padding: 1.5rem 2.5rem;
+    padding: 1.8rem 2.5rem;
     color: @white;
     text-decoration: none;
     &:hover {
@@ -58,7 +78,7 @@ a {
 
 .page-type-label {
   display: inline-block;
-  background: @hotPink;
+  background: lighten(@hotPink, 10%);
   color: @white;
   font-size: 2rem;
   text-transform: uppercase;
@@ -100,6 +120,13 @@ a {
   }
   h3 {
     margin-bottom: .5rem;
+  }
+}
+
+.blog-post {
+  * {
+    max-width: 100%;
+    height: auto;
   }
 }
 
