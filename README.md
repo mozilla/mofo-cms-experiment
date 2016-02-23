@@ -1,5 +1,1 @@
-# (WIP) Mofo CMS Experiment
-
-- run `npm install`
-- plug in your locally hosted WordPress instance's info to [`config.js`](https://github.com/mozilla/mofo-cms-experiment/blob/master/config.js)
-- run `npm start`
+This repo is soon to be retired. Please visit https://github.com/mozilla/wp-calypso instead.
