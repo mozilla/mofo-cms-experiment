@@ -1,6 +1,4 @@
-:loudspeaker:　:loudspeaker:　:loudspeaker:　:loudspeaker:　:loudspeaker:　:loudspeaker:　
-　　　　:house: :arrow_right: :house_with_garden:
-:loudspeaker:　:loudspeaker:　:loudspeaker:　:loudspeaker:　:loudspeaker:　:loudspeaker:　
+:loudspeaker:　:loudspeaker:　:loudspeaker:　　　　:house: :arrow_right: :house_with_garden:　　　　:loudspeaker:　:loudspeaker:　:loudspeaker:　
 
 Our fork of Calypso now lives on https://github.com/mozilla/wp-calypso. We will be retiring this repo soon.
 
